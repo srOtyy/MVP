@@ -1,0 +1,17 @@
+@import  "shared/colors.scss";
+.tool-bar{
+  background-color: $negro;
+  color: $principal;
+  .spacer {
+      flex: 1 1 auto;
+  }
+  button{
+    color: $principal;
+    transition: color;
+    &:hover {
+      color: $principal-hover;
+    }
+  }
+}
+
+
