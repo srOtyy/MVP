@@ -1,15 +1,15 @@
-@import  "shared/colors.scss";
+@use  "shared/colors.scss" as color;
 .tool-bar{
-  background-color: $negro;
-  color: $principal;
+  background-color: color.$negro;
+  color: color.$principal;
   .spacer {
       flex: 1 1 auto;
   }
   button{
-    color: $principal;
+    color: color.$principal;
     transition: color;
     &:hover {
-      color: $principal-hover;
+      color: color.$principal-hover;
     }
   }
 }

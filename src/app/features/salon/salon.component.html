@@ -1,3 +1,21 @@
 <div class="main-container">
-    <app-mesa></app-mesa>
+    <form [formGroup]="formulario">
+        <mat-form-field>
+            <mat-label >Numero mesa</mat-label>
+            <input formControlName="numeroMesa" matInput>
+        </mat-form-field>
+        <button mat-button (click)="agregarMesa()">agregar</button>
+        <button mat-button (click)="eliminarMesa()">eliminar</button>
+    </form>
+    
+    <div class="container-salon">
+        <ng-container *ngFor="let mesa of mesas">
+            <div class="item">
+                <app-mesa [numero]="mesa.numero" [estado]="mesa.estado" [posicion]="mesa.posicion"></app-mesa>
+            </div>
+        </ng-container>
+    </div>
+    
+    
+
 </div>

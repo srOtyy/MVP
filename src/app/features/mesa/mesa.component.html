@@ -1,3 +1,10 @@
-<div class="example-box" cdkDrag>
-    mesa
+<div class="container-mesa">
+    <div class="example-box" 
+    cdkDrag 
+    [ngClass]="{'disponible':estado, 'ocupado':!estado}"
+    (cdkDragEnded)="actualizarPosicionMesa($event)" 
+    [ngStyle]="{'transform': 'translate3d(' + posicion.x + 'px, ' + posicion.y + 'px, 0)'}">
+        <p class="numero"> {{numero}}</p>
+    </div>
+    <button mat-button (click)="cambiarEstado(numero)">Cambiar</button>
 </div>

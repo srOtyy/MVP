@@ -1,5 +1,12 @@
-@import "../../shared/colors.scss";
+@use "../../shared/colors.scss" as color;
 .main-container{
-    background-color: $background-container;
+    background-color: color.$background-container;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .container-salon{
+        display: flex;
+        flex-direction: row;
+    }
 }
