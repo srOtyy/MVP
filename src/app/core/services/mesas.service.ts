@@ -16,6 +16,7 @@ export class MesasService {
   agregarMesa(mesa: IMesa){
     const mesasActuales = this.mesasSubject.value
     this.mesasSubject.next([...mesasActuales, mesa])
+    console.log(this.mesasSubject.value, "mesa agregada");
   }
   eliminarMesa(numero: number){
     const mesasActuales = this.mesasSubject.value.filter( m => m.numero !== numero)
@@ -25,11 +26,20 @@ export class MesasService {
     const mesasActuales = this.mesasSubject.value.map(m => m.numero === numero ? {...m,estado: !m.estado} : m)
     this.mesasSubject.next(mesasActuales)
   }
+
+
   actualizarPosicion(numero: number, posicion:{x:number,y:number}){
     const mesasActuales = this.mesasSubject.value.map(m => m.numero === numero ? {...m,posicion: posicion} : m)
     this.mesasSubject.next(mesasActuales)
     
   }
+
+  agregarProductoComanda(numeroMesa: number, producto: {nombre: string, precio: number}, cantidad: number){
+    const mesasActuales = this.mesasSubject.value.map(m => m.numero == numeroMesa ? {...m, comanda: [...m.comanda,{producto, cantidad}]} : m)
+    this.mesasSubject.next(mesasActuales)
+    console.log(this.buscarMesa(numeroMesa))
+  }
+  // Estas de aca no se donde las uso pero las dejo
   buscarMesa(numero: number): IMesa | undefined{
     return this.mesasSubject.value.find(m => (m.numero == numero))
   }

@@ -1,4 +1,4 @@
-<div class="mesa-container">
+<div class="mesa-container" *ngIf="mesa">
     <div class="mesa-info">
         <div class="mesa__info__encabezado">
           <div class="salir">
@@ -12,12 +12,7 @@
           </div>
         </div>
         <div class="mesa__info__buscador">
-
-          <app-buscador></app-buscador>
-          <!-- aca iria el buscador de productos -->
-
-
-
+          <app-buscador [mesaNumero]="numeroMesa" ></app-buscador>
         </div>
     </div>
     <div class="comanda">
@@ -36,11 +31,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let item of pedidos">
-                  <td>{{ item.producto }}</td>
+                <tr *ngFor="let item of mesa.comanda">
+                  <td>{{ item.producto.nombre }}</td>
                   <td>{{ item.cantidad }}</td>
-                  <td>{{ item.precio | currency }}</td>
-                  <td>{{ item.cantidad * item.precio | currency }}</td>
+                  <td>{{ item.producto.precio| currency }}</td>
+                  <td>{{ item.cantidad * item.producto.precio| currency }}</td>
                   <td>
                     <button>Editar</button>
                     <button>Eliminar</button>

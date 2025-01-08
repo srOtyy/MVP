@@ -11,10 +11,10 @@
         <ul class="productos-lista">
           <li *ngFor="let producto of productosFiltrados">
             <div class="producto">
-              {{ producto }}
+              {{ producto.nombre }} - {{ producto.precio | currency }}
             </div>
             <div class="acciones">
-              <button mat-button >Agregar</button>
+              <button mat-button (click)="agregarProducto(producto)" >Agregar</button>
             </div>
           </li>
         </ul>

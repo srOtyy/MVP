@@ -1,8 +1,8 @@
 # Readme
 ##  General
 ### Introduccion
-La idea es hacer un sistema gastronomico similar al del trabajo. Que genere y edite mesas, mozos con un sistema de comandas para cada mesa.
-En cuanto que hace el programa:
+La idea es hacer un sistema gastronomico similar al del trabajo. Que genere y edite mesas y mozos, con un sistema de comandas para cada mesa.
+En cuanto que hace el programa actualmente:
 Crea mesas que tienen un mozo y una comanda genérica.
 ### Guía de inicio
 1. Clona el repositorio
@@ -22,7 +22,7 @@ mvp
 |--|--|--| mesa-dialog
 |--|--|-- mesa(3)
 |--|--|-- mesa-info(3.1)
-|--|--|--| buscador(3.2)
+|--|--|--| buscador(3.1.1)
 |--|--|-- panel(0 contenedor principal)
 |--|--|-- salon(2)
 |--|--|-- sidenav(1)
@@ -45,7 +45,9 @@ mvp
 ##  Tecnica
 ### Archivos Importantes
 #### mesas.service.ts
-Este servicio gestiona las mesas del sistema y las almacena en un `BehaviorSubject`, permitiendo actualizaciones reactivas.
+Este servicio gestiona las mesas del sistema y las almacena en un `BehaviorSubject`, permitiendo actualizaciones reactivas en los componentes suscriptos.
+- **`CRUD`**
+  CRUD para las mesas
 
 - **`actualizarPosicion(numero: number, posicion: {x: number, y: number}): void`**  
   Actualiza la posición de una mesa específica.  
@@ -53,9 +55,8 @@ Este servicio gestiona las mesas del sistema y las almacena en un `BehaviorSubje
     - `numero`: Número de la mesa.  
     - `posicion`: Coordenadas `{x, y}` de la nueva posición.  
   - **Retorna**: `void`.
-
-### drawer.service.ts
-Este servicio le da funcionalidad al componente `sidenav`, el cual almazena al `salon` (componente core) 
+#### drawer.service.ts
+El componente principal `panel` tiene dentro al componente `sidenav` que sin este servicio, el sidenav no podria funcionar, por lo cual no se podria ver el menu de opciones donde se crean las mesas
 
 ### Variables de entorno
 Por ahora no tenemos :p

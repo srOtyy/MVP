@@ -3,4 +3,13 @@ export interface IMesa{
     estado: boolean;
     posicion: {x: number, y: number};
     mozo: string;
+    comanda: IComandaProducto[];
+}
+export interface IProducto{
+    nombre: string;
+    precio: number;
+}
+export interface IComandaProducto{
+    producto: IProducto
+    cantidad: number
 }

@@ -19,7 +19,7 @@ export class MesaDialogComponent {
   agregarMesa(){
     const numero = this.formulario.get('numeroMesa')?.value;
     const mozo = this.formulario.get('mozoMesa')?.value;
-    this.mesasService.agregarMesa({numero,estado:true, posicion:{x:0,y:0},mozo})
+    this.mesasService.agregarMesa({numero,estado:true, posicion:{x:0,y:0},mozo, comanda: []})
     this.formulario.reset()
   }
   eliminarMesa(){
