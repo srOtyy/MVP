@@ -1,0 +1,17 @@
+<div class="container-dialog">
+    <h3>Editor de mesas</h3>
+    <form [formGroup]="formulario" class="form">
+        <mat-form-field class="input">
+            <mat-label >Numero mesa</mat-label>
+            <input formControlName="numeroMesa" matInput>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label >Mozo</mat-label>
+            <input formControlName="mozoMesa" matInput>
+        </mat-form-field>
+    </form>
+    <div class="botones">
+        <button mat-button [disabled]="formulario.invalid" (click)="agregarMesa()" mat-dialog-close>agregar</button>
+        <button mat-button (click)="eliminarMesa()" mat-dialog-close>eliminar</button>
+    </div>
+</div>

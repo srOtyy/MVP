@@ -1,0 +1,11 @@
+.dialog-base{
+    padding: 0;
+    .mat-dialog-actions{
+        display: flex;
+        flex-direction: row;
+        .btn{
+            padding: 0;
+        }
+    }
+      
+}

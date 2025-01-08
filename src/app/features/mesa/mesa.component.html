@@ -1,10 +1,12 @@
 <div class="container-mesa">
     <div class="example-box" 
     cdkDrag 
+    (click)="irARutaConParametros(numero)"
+    [cdkDragBoundary]="'.container-salon'"
+    [cdkDragDisabled]="!modoEdit"
     [ngClass]="{'disponible':estado, 'ocupado':!estado}"
     (cdkDragEnded)="actualizarPosicionMesa($event)" 
-    [ngStyle]="{'transform': 'translate3d(' + posicion.x + 'px, ' + posicion.y + 'px, 0)'}">
+    [ngStyle]="{'transform': 'translate3d(' + posicion.x + 'px, ' + posicion.y + 'px, 0)','cursor': modoEdit ? 'move' : 'default'}">
         <p class="numero"> {{numero}}</p>
     </div>
-    <button mat-button (click)="cambiarEstado(numero)">Cambiar</button>
 </div>

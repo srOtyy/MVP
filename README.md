@@ -1,4 +1,66 @@
-# Mvp
+# Readme
+##  General
+### Introduccion
+La idea es hacer un sistema gastronomico similar al del trabajo. Que genere y edite mesas, mozos con un sistema de comandas para cada mesa.
+En cuanto que hace el programa:
+Crea mesas que tienen un mozo y una comanda genérica.
+### Guía de inicio
+1. Clona el repositorio
+2. Instala las dependencias con `npm install`
+3. Inicia el servidor de desarrollo con `ng serve -o`
+### Estructura
+mvp
+- src
+|-- app
+|--|-- core
+|--|--|-- services
+|--|--|--| drawer.service.ts
+|--|--|--| mesas.service.ts
+|--|-- features
+|--|--|-- dialogs
+|--|--|--| dialog-base
+|--|--|--| mesa-dialog
+|--|--|-- mesa(3)
+|--|--|-- mesa-info(3.1)
+|--|--|--| buscador(3.2)
+|--|--|-- panel(0 contenedor principal)
+|--|--|-- salon(2)
+|--|--|-- sidenav(1)
+|--|-- shared
+|--|--|-- colors.scss
+|--|--|-- shared.module.ts
+|--|-- app.component.html/scss/ts
+|--|-- app.config.ts
+|--|-- app.routes.ts
+|-- env
+|-- models
+|--|-- interface.ts
+|-- index.html
+|-- main.ts
+|-- style.scss
+
+
+
+
+##  Tecnica
+### Archivos Importantes
+#### mesas.service.ts
+Este servicio gestiona las mesas del sistema y las almacena en un `BehaviorSubject`, permitiendo actualizaciones reactivas.
+
+- **`actualizarPosicion(numero: number, posicion: {x: number, y: number}): void`**  
+  Actualiza la posición de una mesa específica.  
+  - **Parámetros**:  
+    - `numero`: Número de la mesa.  
+    - `posicion`: Coordenadas `{x, y}` de la nueva posición.  
+  - **Retorna**: `void`.
+
+### drawer.service.ts
+Este servicio le da funcionalidad al componente `sidenav`, el cual almazena al `salon` (componente core) 
+
+### Variables de entorno
+Por ahora no tenemos :p
+# Readme generado x Angular
+## Mvp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
 

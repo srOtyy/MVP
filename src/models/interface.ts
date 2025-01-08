@@ -1,5 +1,6 @@
 export interface IMesa{
     numero: number;
     estado: boolean;
-    posicion: {x: number, y: number}
+    posicion: {x: number, y: number};
+    mozo: string;
 }

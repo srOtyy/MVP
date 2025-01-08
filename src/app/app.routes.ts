@@ -1,7 +1,10 @@
 import { Routes } from '@angular/router';
-import { SalonComponent } from './features/salon/salon.component';
+import { MesaInfoComponent } from './features/mesa-info/mesa-info.component';
+import { PanelComponent } from './features/panel/panel.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'salon',pathMatch:'full'},
-    {path:'salon',component: SalonComponent}
+    {path:'salon',component: PanelComponent},
+    {path:'mesa/:numero',component: MesaInfoComponent}
+
 ];

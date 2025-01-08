@@ -1,0 +1,23 @@
+<div class="buscador-productos-container">
+
+    <div class="buscador-productos">
+        <input 
+          type="text" 
+          placeholder="Buscar producto..." 
+          [(ngModel)]="terminoBusqueda" 
+          (input)="filtrarProductos()" 
+        />
+
+        <ul class="productos-lista">
+          <li *ngFor="let producto of productosFiltrados">
+            <div class="producto">
+              {{ producto }}
+            </div>
+            <div class="acciones">
+              <button mat-button >Agregar</button>
+            </div>
+          </li>
+        </ul>
+    </div>
+</div>
+  

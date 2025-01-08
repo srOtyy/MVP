@@ -1,0 +1,29 @@
+@use "../../shared/colors.scss" as color;
+.drawer-sidenav{
+  h2{
+    color: color.$principal;
+    padding: 20px 20px 40px 20px;
+    text-align: center;
+    font: {
+      size: 30px;
+      weight: bold;
+    }
+  }
+
+  padding: 1  0px;
+  width: 210px;
+  margin: auto;
+  .lista-sidenav{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    .item{
+      font-size: 17px;
+      text-align: center;
+      color: color.$principal-hover;
+
+    }
+  }
+}

@@ -6,6 +6,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms'
+import {MatSlideToggleModule,} from '@angular/material/slide-toggle';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatDivider } from '@angular/material/divider';
 @NgModule({
   declarations: [],
   imports: [
@@ -16,6 +19,9 @@ import {ReactiveFormsModule} from '@angular/forms'
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatDivider,
 
   ],
   exports:[
@@ -25,6 +31,9 @@ import {ReactiveFormsModule} from '@angular/forms'
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatDivider,
   ]
 })
 export class SharedModule { }

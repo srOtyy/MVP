@@ -1,0 +1,10 @@
+<mat-toolbar class="tool-bar">
+    <button mat-icon-button (click)="cambiarDrawer()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>MVP</span>
+    <span class="spacer">
+    </span>
+    <mat-slide-toggle (change)="cambiarModoEditar()"  labelPosition="before">{{txtEditar}}</mat-slide-toggle>
+</mat-toolbar>
+<app-sidenav></app-sidenav>

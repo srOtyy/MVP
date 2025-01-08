@@ -1,12 +1,13 @@
 @use "../../shared/colors.scss" as color;
 .main-container{
     background-color: color.$background-container;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    height: 90vh;
     gap: 20px;
     .container-salon{
         display: flex;
         flex-direction: row;
+        height: 100%;
     }
 }

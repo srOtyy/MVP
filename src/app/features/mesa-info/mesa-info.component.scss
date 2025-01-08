@@ -1,0 +1,119 @@
+@use "../../shared/colors.scss" as color;
+.mesa-container{
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  .mesa-info,.comanda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 10px;
+    width: 50%;       
+  }
+  .mesa-info{
+    background-color: color.$background-container;
+    border-right: 8px solid color.$negro;
+
+    .mesa__info__encabezado{
+      width: 90%;
+
+      .salir{
+        .btn{
+          color: color.$negro;
+        }
+      }
+      .info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+  .comanda{
+      background-color: color.$background-container-2;
+      height: auto;
+      color: #505050;
+      .comanda-container {
+          height: 450px;
+          margin: 20px auto;
+          max-width: 800px;
+          background: #d1d1d1;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        
+          .comanda-pedidos {
+            overflow: hidden;
+            overflow-y: auto;
+            h2 {
+              font-size: 1.25rem;
+              margin-bottom: 10px;
+            }
+        
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              background-color: #f8f8f8;
+              th, td {
+                border: 1px solid #333333;
+                padding: 8px;
+                text-align: left;
+                
+              }
+        
+              th {
+                background-color: #f8f8f8;
+              }
+            }
+          }
+          .comanda-footer{
+            .comanda-total {
+              text-align: right;
+              margin: 20px 0;
+          
+              h3 {
+                font-size: 1.25rem;
+              }
+            }
+          
+            .comanda-actions {
+              display: flex;
+              justify-content: space-between;
+          
+              .btn-confirmar {
+                background-color: #4caf50;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+          
+                &:hover {
+                  background-color: #45a049;
+                }
+              }
+          
+              .btn-cancelar {
+                background-color: #f44336;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+          
+                &:hover {
+                  background-color: #e53935;
+                }
+              }
+            }
+          }
+          
+        }
+        
+  }   
+}

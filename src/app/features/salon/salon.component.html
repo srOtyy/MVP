@@ -1,21 +1,9 @@
 <div class="main-container">
-    <form [formGroup]="formulario">
-        <mat-form-field>
-            <mat-label >Numero mesa</mat-label>
-            <input formControlName="numeroMesa" matInput>
-        </mat-form-field>
-        <button mat-button (click)="agregarMesa()">agregar</button>
-        <button mat-button (click)="eliminarMesa()">eliminar</button>
-    </form>
-    
-    <div class="container-salon">
+    <div class="container-salon"  cdkDropList cdkDropListBoundary=".container-salon">
         <ng-container *ngFor="let mesa of mesas">
             <div class="item">
-                <app-mesa [numero]="mesa.numero" [estado]="mesa.estado" [posicion]="mesa.posicion"></app-mesa>
+                <app-mesa  [numero]="mesa.numero" [estado]="mesa.estado" [posicion]="mesa.posicion"></app-mesa>
             </div>
         </ng-container>
     </div>
-    
-    
-
 </div>

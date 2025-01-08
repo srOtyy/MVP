@@ -1,0 +1,67 @@
+<div class="mesa-container">
+    <div class="mesa-info">
+        <div class="mesa__info__encabezado">
+          <div class="salir">
+            <button mat-button class="btn" (click)="volverAlSalon()">
+              <mat-icon >arrow_back</mat-icon>
+            </button>
+          </div>
+          <div class="info">
+            <h2>Mesa: {{this.mesa?.numero}}</h2>
+            <h2>Mozo: {{this.mesa?.mozo}}</h2>
+          </div>
+        </div>
+        <div class="mesa__info__buscador">
+
+          <app-buscador></app-buscador>
+          <!-- aca iria el buscador de productos -->
+
+
+
+        </div>
+    </div>
+    <div class="comanda">
+      <mat-divider></mat-divider>
+      <div class="comanda-container">
+        
+        <div class="comanda-pedidos">
+          <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                  <th>Total</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of pedidos">
+                  <td>{{ item.producto }}</td>
+                  <td>{{ item.cantidad }}</td>
+                  <td>{{ item.precio | currency }}</td>
+                  <td>{{ item.cantidad * item.precio | currency }}</td>
+                  <td>
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                  </td>
+                </tr>
+              </tbody>
+          </table>  
+        </div>
+
+        <div class="comanda-footer">
+            <div class="comanda-total">
+              <h3>Total: $1510.00 </h3>
+              <mat-divider></mat-divider>
+            </div>
+            <div class="comanda-actions">
+              
+              <button  class="btn-confirmar">Confirmar Comanda</button>
+              <button   class="btn-cancelar">Cancelar Comanda</button>
+            </div>
+        </div>
+      </div>
+
+    </div>
+</div>

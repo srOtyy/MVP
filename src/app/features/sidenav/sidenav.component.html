@@ -1,0 +1,18 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side" [opened]="abrirDrawer">
+    <h2>MVP</h2>
+    <mat-divider></mat-divider>
+    <ul class="lista-sidenav">
+      <button mat-button class="item" (click)="abrirDialog()">
+        <mat-icon>boy</mat-icon>Mesas
+      </button>
+      <button mat-button class="item">
+        <mat-icon>sell</mat-icon>Productos
+      </button>
+      <button mat-button class="item">
+        <mat-icon>settings</mat-icon>Configuración
+      </button>
+    </ul>
+  </mat-drawer>
+<app-salon></app-salon>
+</mat-drawer-container>

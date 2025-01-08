@@ -1,0 +1,29 @@
+@use  "../../shared/colors.scss" as color;
+.tool-bar{
+  background-color: color.$negro;
+  color: color.$principal;
+  .spacer {
+      flex: 1 1 auto;
+  }
+  button{
+    color: color.$principal;
+    transition: color;
+
+  }
+  .activo{
+    background-color: color.$principal;
+    color: color.$negro;
+    &:hover {
+      background-color: color.$principal-hover;
+      color: color.$negro;
+    }
+  }
+  .inactivo{
+    background-color: color.$principal-hover;
+    color: color.$negro;
+    
+  }
+  .toggle{
+    margin-right: 30px;
+  }
+}

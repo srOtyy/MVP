@@ -1,0 +1,48 @@
+.buscador-productos-container{
+    background-color: #101e1e;
+    padding: 30px;
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+    .buscador-productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 410px;
+        margin: auto;
+        padding: 10px;
+      }
+      
+      input {
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        width: 100%;
+        max-height: 300px;
+      }
+      
+      li {
+        width: 100%;
+        color: #ddd;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #aaa;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .producto{
+          font-size: 17px;
+        }
+      }
+      
+}
