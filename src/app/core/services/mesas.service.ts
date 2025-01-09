@@ -8,7 +8,9 @@ export class MesasService {
   private modoEditarSubject = new BehaviorSubject<boolean>(false);
   modoEditar$ = this.modoEditarSubject.asObservable();
   
-  private mesasSubject = new BehaviorSubject<IMesa[]>([])
+  private mesasSubject = new BehaviorSubject<IMesa[]>([
+    {numero: 1, estado: false, comanda: [], posicion: {x: 0, y: 0}, mozo: "Oty"},
+    ])
   mesas$ = this.mesasSubject.asObservable()
   
   //CRUD MESAS

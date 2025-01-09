@@ -3,12 +3,12 @@
         <div class="mesa__info__encabezado">
           <div class="salir">
             <button mat-button class="btn" (click)="volverAlSalon()">
-              <mat-icon >arrow_back</mat-icon>
+              <mat-icon class="icon" >arrow_back</mat-icon>
             </button>
           </div>
           <div class="info">
-            <h2>Mesa: {{this.mesa?.numero}}</h2>
-            <h2>Mozo: {{this.mesa?.mozo}}</h2>
+            <h2>Mesa: {{this.mesa.numero}}</h2>
+            <h2>Mozo: {{this.mesa.mozo}}</h2>
           </div>
         </div>
         <div class="mesa__info__buscador">
@@ -36,9 +36,13 @@
                   <td>{{ item.cantidad }}</td>
                   <td>{{ item.producto.precio| currency }}</td>
                   <td>{{ item.cantidad * item.producto.precio| currency }}</td>
-                  <td>
-                    <button>Editar</button>
-                    <button>Eliminar</button>
+                  <td class="acciones-td">
+                    <button mat-button >
+                      <mat-icon > close </mat-icon>
+                    </button>
+                    <button mat-button >
+                      <mat-icon > settings </mat-icon>
+                    </button>
                   </td>
                 </tr>
               </tbody>
