@@ -19,7 +19,7 @@ export class MesaDialogComponent {
   agregarMesa(){
     const numero = this.formulario.get('numeroMesa')?.value;
     const mozo = this.formulario.get('mozoMesa')?.value;
-    this.mesasService.agregarMesa({numero,estado:true, posicion:{x:0,y:0},mozo, comanda: []})
+    this.mesasService.agregarMesa({numero,estado:true, posicion:{x:0,y:0},mozo, comanda: [],id:this.randomId()})
     this.formulario.reset()
   }
   eliminarMesa(){
@@ -27,4 +27,15 @@ export class MesaDialogComponent {
     this.mesasService.eliminarMesa(numero)
     this.formulario.reset()
   }
+  randomId() {
+    let result = '';
+    const caracteres = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const caracteresLargo = caracteres.length;
+    let counter = 0;
+    while (counter < 4) {
+      result += caracteres.charAt(Math.floor(Math.random() * caracteresLargo));
+      counter += 1;
+    }
+    return result;
+}
 }

@@ -57,7 +57,8 @@ Este servicio gestiona las mesas del sistema y las almacena en un `BehaviorSubje
   - **Retorna**: `void`.
 #### drawer.service.ts
 El componente principal `panel` tiene dentro al componente `sidenav` que sin este servicio, el sidenav no podria funcionar, por lo cual no se podria ver el menu de opciones donde se crean las mesas
-
+#### bbdd.service.ts
+  es la conexion a la base de datos de json-server
 ### Variables de entorno
 Por ahora no tenemos :p
 # Readme generado x Angular

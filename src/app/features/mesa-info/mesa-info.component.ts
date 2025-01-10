@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MesasService } from '../../core/services/mesas.service';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { IComandaProducto } from '../../../models/interface';
+import { BbddService } from '../../core/services/bbdd.service';
 @Component({
   selector: 'app-mesa-info',
   imports: [SharedModule, CommonModule, BuscadorComponent],
@@ -26,7 +27,8 @@ export class MesaInfoComponent {
   constructor(  
     private route: ActivatedRoute,
     private router: Router, 
-    private mesasService: MesasService) {}
+    private mesasService: MesasService,
+    private http: BbddService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -35,10 +37,11 @@ export class MesaInfoComponent {
     this.mesasService.mesas$.subscribe(mesas => {
       this.mesa = mesas.find(m => m.numero == this.numeroMesa);
     })
-    console.log("numero:",this.numeroMesa,"mesa:", this.mesa);
   }
   volverAlSalon(){
     this.router.navigate(['/salon']);
   }
-
+  botonPrueba(){
+    
+  }
 }

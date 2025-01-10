@@ -22,6 +22,8 @@ export class SalonComponent implements OnInit{
     this.mesasService.mesas$.subscribe( mesas => {
       this.mesas = mesas
     })
+    this.mesasService.inicializarServicio()
+
   }
   
  

@@ -1,0 +1,79 @@
+{
+  "mesas": [
+    {
+      "id": "1",
+      "numero": 1,
+      "mozo": "Juan",
+      "estado": "ocupada",
+      "productos": [],
+      "posicion":{"x":0,"y":0}
+    },
+    {
+      "numero": 20,
+      "mozo": "Otyy",
+      "estado": "no se",
+      "productos": [],
+      "posicion":{"x":0,"y":0},
+      "id": "2"
+    },
+    {
+      "id": 1,
+      "numero": 1,
+      "mozo": "Juan",
+      "estado": "ocupada",
+      "productos": [],
+      "posicion":{"x":0,"y":0}
+    },
+    {
+      "id": "91ef",
+      "numero": 10,
+      "mozo": "Oty",
+      "estado": "disponible",
+      "productos": [],
+      "posicion":{"x":0,"y":0}
+    },
+    {
+      "id": "d0f3",
+      "numero": 23,
+      "mozo": "OtyY",
+      "estado": "disponible zanaaaa",
+      "productos": [
+        [
+          {
+            "id": "1",
+            "nombre": "Café",
+            "precio": 150
+          },
+          {
+            "id": "2",
+            "nombre": "Té",
+            "precio": 120
+          },
+          {
+            "id": "3",
+            "nombre": "Medialuna",
+            "precio": 80
+          }
+        ]
+      ],
+      "posicion":{"x":0,"y":0}
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Café",
+      "precio": 150
+    },
+    {
+      "id": "2",
+      "nombre": "Té",
+      "precio": 120
+    },
+    {
+      "id": "3",
+      "nombre": "Medialuna",
+      "precio": 80
+    }
+  ]
+}

@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { IMesa } from '../../../models/interface';
+import { BbddService } from './bbdd.service';
 @Injectable({
   providedIn: 'root'
 })
 export class MesasService {
+  constructor( private bbdd:BbddService) { }
   private modoEditarSubject = new BehaviorSubject<boolean>(false);
   modoEditar$ = this.modoEditarSubject.asObservable();
   
-  private mesasSubject = new BehaviorSubject<IMesa[]>([
-    {numero: 1, estado: false, comanda: [], posicion: {x: 0, y: 0}, mozo: "Oty"},
-    ])
+  private mesasSubject = new BehaviorSubject<IMesa[]>([])
   mesas$ = this.mesasSubject.asObservable()
   
+  inicializarServicio(){
+    this.bbdd.getMesas().subscribe( mesas => this.mesasSubject.next(mesas))
+  }
+  actualizarMesas(){
+    this.inicializarServicio()
+  }
+
   //CRUD MESAS
   
   agregarMesa(mesa: IMesa){
