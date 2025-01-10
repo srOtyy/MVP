@@ -3,7 +3,7 @@
 ### Introduccion
 La idea es hacer un sistema gastronomico similar al del trabajo. Que genere y edite mesas y mozos, con un sistema de comandas para cada mesa.
 En cuanto que hace el programa actualmente:
-Crea mesas que tienen un mozo y una comanda genérica.
+Crea mesas que tienen un mozo y una comanda genérica
 ### Guía de inicio
 1. Clona el repositorio
 2. Instala las dependencias con `npm install`
@@ -43,6 +43,15 @@ mvp
 
 
 ##  Tecnica
+- 10/1
+- El programa ahora se conecta a la base de datos de json-server
+- Pide las mesas por get y puede editar la comanda desde mesa-info
+- Lo que queda hacer ahora es:
+1. Crear y eliminar mesas (conectarlo a la bbdd)
+2. Que la comanda calcule el total y para renderizarlo en la plantilla html
+3. Alguna que otra funcionalidad relacionada con las mesas y las comandas (¿?)
+4. Estilizar
+5. Lo siguiente es el CURD a la bbdd con los productos (no hay HUD para esto)
 ### Archivos Importantes
 #### mesas.service.ts
 Este servicio gestiona las mesas del sistema y las almacena en un `BehaviorSubject`, permitiendo actualizaciones reactivas en los componentes suscriptos.

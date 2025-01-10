@@ -42,12 +42,34 @@ export class MesasService {
     this.mesasSubject.next(mesasActuales)
     
   }
+  agregarProductoComanda(
+    id: string,
+    producto: { nombre: string; precio: number },
+    cantidad: number
+  ) {
+    const mesasActuales = this.mesasSubject.value.map((m) => {
+      if (m.id === id) {
+        // Crear una nueva mesa con la comanda actualizada
+        const nuevaComanda = [...m.comanda, { producto, cantidad }];
+        console.log('Nueva comanda:', nuevaComanda);
+  
+        const mesaActualizada = { ...m, comanda: nuevaComanda };
+        this.bbdd.editarMesa(mesaActualizada).subscribe({
+          next: () => console.log(`Mesa ${id} actualizada correctamente`),
+          error: (err) => console.error(`Error al actualizar mesa ${id}:`, err),
+        });
 
-  agregarProductoComanda(numeroMesa: number, producto: {nombre: string, precio: number}, cantidad: number){
-    const mesasActuales = this.mesasSubject.value.map(m => m.numero == numeroMesa ? {...m, comanda: [...m.comanda,{producto, cantidad}]} : m)
-    this.mesasSubject.next(mesasActuales)
-    console.log(this.buscarMesa(numeroMesa))
+        return mesaActualizada;
+      }
+      return m;
+    });
+  
+    this.mesasSubject.next(mesasActuales);
   }
+  
+ 
+
+
   // Estas de aca no se donde las uso pero las dejo
   buscarMesa(numero: number): IMesa | undefined{
     return this.mesasSubject.value.find(m => (m.numero == numero))

@@ -16,13 +16,7 @@ import { BbddService } from '../../core/services/bbdd.service';
 export class MesaInfoComponent {
   mesa: IMesa | undefined ;
   numeroMesa: number = 0;
-  comanda: IComandaProducto[] = [
-    {producto: {nombre: 'Cafe', precio: 120}, cantidad: 1},
-    {producto: {nombre: 'Medialuna', precio: 90}, cantidad: 3},
-    {producto: {nombre: 'Exprimido', precio: 180}, cantidad: 2},
-    {producto: {nombre: 'Tostadas', precio: 140}, cantidad: 1},
-    {producto: {nombre: 'Cafe con leche', precio: 170}, cantidad: 1},
-  ]
+  comanda: IComandaProducto[] = []
   
   constructor(  
     private route: ActivatedRoute,

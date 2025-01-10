@@ -5,15 +5,57 @@
       "numero": 1,
       "mozo": "Juan",
       "estado": "ocupada",
-      "productos": [],
-      "posicion":{"x":0,"y":0}
+      "comanda": [],
+      "posicion": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
       "numero": 20,
       "mozo": "Otyy",
       "estado": "no se",
-      "productos": [],
-      "posicion":{"x":0,"y":0},
+      "comanda": [
+        {
+          "producto": {
+            "nombre": "Medialuna",
+            "precio": 90
+          },
+          "cantidad": 1
+        },
+        {
+          "producto": {
+            "nombre": "Tostadas",
+            "precio": 140
+          },
+          "cantidad": 1
+        },
+        {
+          "producto": {
+            "nombre": "Tostadas",
+            "precio": 140
+          },
+          "cantidad": 1
+        },
+        {
+          "producto": {
+            "nombre": "Exprimido",
+            "precio": 180
+          },
+          "cantidad": 1
+        },
+        {
+          "producto": {
+            "nombre": "Cafe",
+            "precio": 120
+          },
+          "cantidad": 1
+        }
+      ],
+      "posicion": {
+        "x": 0,
+        "y": 0
+      },
       "id": "2"
     },
     {
@@ -21,59 +63,77 @@
       "numero": 1,
       "mozo": "Juan",
       "estado": "ocupada",
-      "productos": [],
-      "posicion":{"x":0,"y":0}
+      "comanda": [],
+      "posicion": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
       "id": "91ef",
       "numero": 10,
       "mozo": "Oty",
       "estado": "disponible",
-      "productos": [],
-      "posicion":{"x":0,"y":0}
+      "comanda": [],
+      "posicion": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
       "id": "d0f3",
       "numero": 23,
       "mozo": "OtyY",
       "estado": "disponible zanaaaa",
-      "productos": [
-        [
-          {
-            "id": "1",
-            "nombre": "Café",
-            "precio": 150
-          },
-          {
-            "id": "2",
-            "nombre": "Té",
+      "comanda": [
+        {
+          "producto": {
+            "nombre": "Cafe",
             "precio": 120
           },
-          {
-            "id": "3",
-            "nombre": "Medialuna",
-            "precio": 80
-          }
-        ]
+          "cantidad": 1
+        },
+        {
+          "producto": {
+            "nombre": "Cafe",
+            "precio": 120
+          },
+          "cantidad": 1
+        },
+        {
+          "producto": {
+            "nombre": "Cafe",
+            "precio": 120
+          },
+          "cantidad": 1
+        }
       ],
-      "posicion":{"x":0,"y":0}
+      "posicion": {
+        "x": 0,
+        "y": 0
+      }
     }
   ],
   "productos": [
     {
-      "id": "1",
-      "nombre": "Café",
-      "precio": 150
-    },
-    {
-      "id": "2",
-      "nombre": "Té",
+      "nombre": "Cafe",
       "precio": 120
     },
     {
-      "id": "3",
       "nombre": "Medialuna",
-      "precio": 80
+      "precio": 90
+    },
+    {
+      "nombre": "Exprimido",
+      "precio": 180
+    },
+    {
+      "nombre": "Tostadas",
+      "precio": 140
+    },
+    {
+      "nombre": "Cafe con leche",
+      "precio": 70
     }
   ]
 }

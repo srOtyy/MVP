@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IMesa } from '../../../models/interface';
+import { IMesa, IProducto } from '../../../models/interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +20,9 @@ export class BbddService {
   }
   editarMesa(mesa: IMesa): Observable<IMesa> {
     return this.http.put<IMesa>(`${this.apiUrl}/mesas/${mesa.id}`, mesa);
+  }
+  //productos
+  getProductos(): Observable<IProducto[]>{
+    return this.http.get<IProducto[]>(`${this.apiUrl}/productos`);
   }
 }
