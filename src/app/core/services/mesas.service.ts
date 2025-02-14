@@ -15,6 +15,7 @@ export class MesasService {
   
   inicializarServicio(){
     this.bbdd.getMesas().subscribe( mesas => this.mesasSubject.next(mesas))
+    
   }
   actualizarMesas(){
     this.inicializarServicio()
@@ -42,6 +43,7 @@ export class MesasService {
     this.mesasSubject.next(mesasActuales)
     
   }
+  //Revisar esta funcion mas adelante
   agregarProductoComanda(
     id: string,
     producto: { nombre: string; precio: number },
@@ -69,10 +71,14 @@ export class MesasService {
   
  
 
-
-  // Estas de aca no se donde las uso pero las dejo
-  buscarMesa(numero: number): IMesa | undefined{
-    return this.mesasSubject.value.find(m => (m.numero == numero))
+  buscarMesaPorNumero(numero: number): string | undefined{
+    const mesa = this.mesasSubject.value.find(m => (m.numero == numero))
+    if( mesa ){
+      return mesa.id
+    }else{
+      console.log("Mesa no encontrada");
+      return undefined
+    }
   }
   cambiarModoEditar(){
     this.modoEditarSubject.next(!this.modoEditarSubject.value);

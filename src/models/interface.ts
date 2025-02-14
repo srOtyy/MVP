@@ -4,7 +4,7 @@ export interface IMesa{
     posicion: {x: number, y: number};
     mozo: string;
     comanda: IComandaProducto[];
-    id: string
+    id?: string
 }
 export interface IProducto{
     nombre: string;

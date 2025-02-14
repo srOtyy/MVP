@@ -24,6 +24,7 @@ export class MesaComponent implements OnInit{
     this.mesaService.modoEditar$.subscribe((modo) => {
       this.modoEdit = modo
     })
+    console.log("mesa ee",this.numero, this.estado, this.posicion)
   }
   cambiarEstado(numero:number){
     this.mesaService.editarEstadoMesa(numero)

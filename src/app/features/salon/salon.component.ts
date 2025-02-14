@@ -21,9 +21,12 @@ export class SalonComponent implements OnInit{
   ngOnInit(): void {
     this.mesasService.mesas$.subscribe( mesas => {
       this.mesas = mesas
+      for (let mesa of this.mesas){
+        console.log(mesa)
+      }
     })
     this.mesasService.inicializarServicio()
-
+  
   }
   
  

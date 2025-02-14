@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MesasService } from '../../../core/services/mesas.service';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../shared/shared.module';
+import { BbddService } from '../../../core/services/bbdd.service';
 
 @Component({
   selector: 'app-mesa-dialog',
@@ -15,16 +16,22 @@ export class MesaDialogComponent {
     numeroMesa: new FormControl('', Validators.required),
     mozoMesa: new FormControl('', Validators.required),
   })
-  constructor(private mesasService:MesasService){}
+  constructor(private mesasService:MesasService, private bbdd:BbddService){}
+
   agregarMesa(){
     const numero = this.formulario.get('numeroMesa')?.value;
     const mozo = this.formulario.get('mozoMesa')?.value;
-    this.mesasService.agregarMesa({numero,estado:true, posicion:{x:0,y:0},mozo, comanda: [],id:this.randomId()})
+    this.bbdd.crearMesa(numero , estado:true , posicion:{x:0,y:0},mozo, comanda: []).subscribe() 
+    this.mesasService.agregarMesa({numero,estado:true, posicion:{x:0,y:0},mozo, comanda: []})
     this.formulario.reset()
   }
   eliminarMesa(){
     const numero = this.formulario.get('numeroMesa')?.value;
-    this.mesasService.eliminarMesa(numero)
+    const idMesa = this.mesasService.buscarMesaPorNumero(numero)
+    if(idMesa){
+      this.bbdd.eliminarMesa(idMesa).subscribe()
+      this.mesasService.eliminarMesa(numero)
+    }
     this.formulario.reset()
   }
   randomId() {
